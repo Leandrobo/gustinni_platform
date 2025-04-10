@@ -1,0 +1,47 @@
+[
+    {
+        "nome": "Tech Import",
+        "produto": "Smartwatch Original X99",
+        "preco": "R$ 79,90",
+        "imagem": "https://example.com/produtos/smartwatch.jpg",
+        "link": "https://www.mercadolivre.com.br/MLB-001-smartwatch-x99"
+    },
+    {
+        "nome": "Beleza Pura",
+        "produto": "Kit Skincare 5 em 1",
+        "preco": "R$ 49,90",
+        "imagem": "https://example.com/produtos/skincare.jpg",
+        "link": "https://shopee.com.br/kit-skincare"
+    },
+    {
+        "nome": "Casa Fácil",
+        "produto": "Luminária LED Sensor de Presença",
+        "preco": "R$ 32,00",
+        "imagem": "https://example.com/produtos/luminaria.jpg",
+        "link": "https://www.mercadolivre.com.br/MLB-003-luminaria-led"
+    },
+    {
+        "nome": "Pet & Cia",
+        "produto": "Caminha para Cães Pequenos",
+        "preco": "R$ 55,00",
+        "imagem": "https://example.com/produtos/caminha.jpg",
+        "link": "https://shopee.com.br/caminha-pet"
+    },
+    {
+        "nome": "Kids Mundo",
+        "produto": "Conjunto Educativo Monta Fácil",
+        "preco": "R$ 39,90",
+        "imagem": "https://example.com/produtos/montafacil.jpg",
+        "link": "https://www.mercadolivre.com.br/MLB-005-montafacil"
+    },
+    {
+        "nome": "Fit Store",
+        "produto": "Elástico de Resistência Pro",
+        "preco": "R$ 25,00",
+        "imagem": "https://example.com/produtos/elastico.jpg",
+        "link": "https://shopee.com.br/elastico-fit"
+    },
+    {
+        "nome": "Auto Tech",
+        "produto": "Suporte Celular Veicular Magnético",
+        "
