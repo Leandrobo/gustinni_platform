@@ -1,15 +1,17 @@
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template, request, redirect, url_for
 
-auth_blueprint = Blueprint("auth", __name__)
+auth_blueprint = Blueprint('auth', __name__)
 
-@auth_blueprint.route("/login")
+@auth_blueprint.route('/login', methods=['GET', 'POST'])
 def login():
-    return render_template("login.html")
+    if request.method == 'POST':
+        username = request.form.get('username')
+        password = request.form.get('password')
 
-@auth_blueprint.route("/register")
-def register():
-    return render_template("register.html")
+        # Exemplo de verificação (pode ser adaptado para autenticação real)
+        if username == "admin" and password == "senha123":
+            return redirect(url_for('admin.dashboard'))  # Altere conforme seu app
+        else:
+            return render_template('login.html', message="Credenciais inválidas")
 
-@auth_blueprint.route("/dashboard")
-def dashboard():
-    return render_template("dashboard.html")
+    return render_template('login.html')
