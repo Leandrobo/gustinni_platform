@@ -1,13 +1,20 @@
-<h1>Adicionar Loja Mercado Livre</h1>
-<form method="POST">
-  <label for="store_name">Nome da Loja:</label>
-  <input type="text" name="store_name" required><br>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastrar Loja</title>
+</head>
+<body>
+    <h1>Cadastrar Nova Loja</h1>
+    <form action="/admin/add-store" method="POST">
+        <label for="store_name">Nome da Loja:</label><br>
+        <input type="text" id="store_name" name="store_name" required><br><br>
 
-  <label for="store_email">E-mail:</label>
-  <input type="email" name="store_email" required><br>
+        <label for="ml_token">Token do Mercado Livre:</label><br>
+        <input type="text" id="ml_token" name="ml_token" required><br><br>
 
-  <label for="access_token">Token de Acesso (temporário):</label>
-  <input type="text" name="access_token" required><br>
-
-  <button type="submit">Cadastrar Loja</button>
-</form>
+        <button type="submit">Cadastrar</button>
+    </form>
+    <a href="/admin/dashboard">Voltar ao painel</a>
+</body>
+</html>
