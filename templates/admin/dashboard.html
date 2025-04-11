@@ -1,5 +1,7 @@
+<!-- backend/templates/admin/dashboard.html -->
+
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <title>Painel Administrativo</title>
@@ -15,7 +17,6 @@
         <li>Status do Mercado Livre: Conectado</li>
     </ul>
 
-    <a href="/admin/add-store">Cadastrar nova loja</a><br>
-    <a href="/admin/stores">Ver lojas cadastradas</a>
+    <a href="{{ url_for('admin.add_store') }}">Cadastrar nova loja</a>
 </body>
 </html>
