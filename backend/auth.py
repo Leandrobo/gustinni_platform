@@ -8,9 +8,9 @@ def login():
         username = request.form.get('username')
         password = request.form.get('password')
 
-        # Exemplo de verificação (pode ser adaptado para autenticação real)
+        # Login simples de exemplo
         if username == "admin" and password == "senha123":
-            return redirect(url_for('admin.dashboard'))  # Altere conforme seu app
+            return redirect(url_for('admin.dashboard'))  # Altere conforme seu blueprint
         else:
             return render_template('login.html', message="Credenciais inválidas")
 
