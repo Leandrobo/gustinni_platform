@@ -1,12 +1,61 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <title>Dashboard - Gustinni</title>
+    <meta charset="UTF-8">
+    <title>Painel - Gustinni</title>
+    <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
-  <h1>Bem-vindo, {{ usuario }}!</h1>
-  <p>Você está logado na Plataforma Gustinni.</p>
-  <a href="{{ url_for('auth.logout') }}">Sair</a>
+    <header>
+        <h2>Painel do Usuário</h2>
+        <nav>
+            <a href="/planos">Plano Premium</a> |
+            <a href="/logout">Sair</a>
+        </nav>
+    </header>
+    <main>
+        <h3>Integrações com Plataformas</h3>
+        <div class="integracoes">
+            <a href="/conectar/mercado-livre">
+                <button class="btn-ml">Conectar Mercado Livre</button>
+            </a>
+            <a href="/conectar/shopee">
+                <button class="btn-shopee">Conectar Shopee</button>
+            </a>
+        </div>
+
+        <hr>
+
+        <h3>Fornecedores Disponíveis</h3>
+        <div id=<h3>Fornecedores Disponíveis</h3>
+<div id="fornecedores">
+    {% for f in fornecedores %}
+    <div class="fornecedor">
+        <img src="{{ f.imagem }}" alt="{{ f.produto }}" width="120">
+        <h4>{{ f.produto }}</h4>
+        <p><strong>Fornecedor:</strong> {{ f.nome }}</p>
+        <p><strong>Preço:</strong> {{ f.preco }}</p>
+        <a href="{{ f.link }}" target="_blank">
+            <button>Ver Produto</button>
+        </a>
+        <button onclick="copiarDados('{{ f.produto }}', '{{ f.preco }}', '{{ f.link }}')">Copiar Dados</button>
+    </div>
+    <hr>
+    {% endfor %}
+</div>
+
+<script>
+function copiarDados(produto, preco, link) {
+    const texto = `Produto: ${produto}\nPreço: ${preco}\nLink: ${link}`;
+    navigator.clipboard.writeText(texto).then(() => {
+        alert("Dados copiados com sucesso!");
+    });
+}
+</script>
+>
+            <p>Lista de produtos será exibida aqui (em breve)</p>
+        </div>
+    </main>
 </body>
-</html>
+              </html>
+              
