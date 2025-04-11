@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Lojas Cadastradas</title>
+</head>
+<body>
+    <h1>Lojas Cadastradas</h1>
+    <ul>
+        {% for store in stores %}
+            <li>{{ store.name }} - Token: {{ store.token }}</li>
+        {% else %}
+            <li>Nenhuma loja cadastrada.</li>
+        {% endfor %}
+    </ul>
+    <a href="/admin/dashboard">Voltar ao painel</a>
+</body>
+</html>
