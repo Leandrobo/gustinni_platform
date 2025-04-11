@@ -3,16 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <title>Cadastro - Gustinni</title>
+  <style>
+    body { font-family: Arial; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; }
+    form { display: flex; flex-direction: column; width: 300px; gap: 10px; }
+  </style>
 </head>
 <body>
-  <h1>Cadastro</h1>
+  <h2>Criar sua conta na Gustinni</h2>
   <form method="POST">
-    <label>Usuário:</label>
-    <input type="text" name="username" required><br><br>
-    <label>Senha:</label>
-    <input type="password" name="password" required><br><br>
+    <input type="email" name="email" placeholder="Seu e-mail" required>
+    <input type="password" name="password" placeholder="Crie uma senha" required>
     <button type="submit">Cadastrar</button>
   </form>
-  <p>Já tem uma conta? <a href="{{ url_for('auth.login') }}">Entrar</a></p>
+  <p>Já tem conta? <a href="/login">Fazer login</a></p>
 </body>
 </html>
