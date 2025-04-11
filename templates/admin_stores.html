@@ -1,0 +1,6 @@
+<h1>Lojas Cadastradas</h1>
+<ul>
+  {% for store in stores %}
+    <li>{{ store.name }} ({{ store.email }})</li>
+  {% endfor %}
+</ul>
