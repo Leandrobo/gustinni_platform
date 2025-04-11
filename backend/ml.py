@@ -1,3 +1,18 @@
+from flask import Blueprint, request, redirect, session
+import json
+
+ml_blueprint = Blueprint('ml', __name__)
+
+@ml_blueprint.route('/ml/callback')
+def ml_callback():
+    code = request.args.get('code')
+    if not code:
+        return 'Código de autorização não fornecido.', 400
+
+    # Simula o recebimento do código e salva na sessão (exemplo)
+    session['ml_code'] = code
+    return redirect('/')
+    
 import requests
 from flask import Blueprint, redirect, request, session
 
