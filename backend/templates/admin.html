@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin - Gustinni</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+        <h2>Administração da Gustinni</h2>
+        <nav>
+            <a href="/dashboard">Voltar ao Painel</a>
+        </nav>
+    </header>
+    <main>
+        <h3>Usuários Registrados</h3>
+        <table border="1" cellpadding="6">
+            <thead>
+                <tr>
+                    <th>Email</th>
+                    <th>Status</th>
+                    <th>Ação</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for email, info in usuarios.items() %}
+                <tr>
+                    <td>{{ email }}</td>
+                    <td>{{ 'Premium' if info.premium else 'Grátis' }}</td>
+                    <td>
+                        {% if email != 'gustinni@admin.com' %}
+                        <form method="post" action="/admin/atualizar">
+                            <input type="hidden" name="email" value="{{ email }}">
+                            <input type="hidden" name="premium" value="{{ 'desativar' if info.premium else 'ativar' }}">
+                            <button type="submit">
+                                {{ 'Desativar Premium' if info.premium else 'Ativar Premium' }}
+                            </button>
+                        </form>
+                        {% else %}
+                        Admin
+                        {% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </main>
+</body>
+</html>
