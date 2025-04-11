@@ -1,3 +1,13 @@
+from flask import Flask
+from backend.auth import auth_blueprint
+from backend.admin import admin_blueprint
+
+app = Flask(__name__)
+app.secret_key = 'chave-secreta'
+
+app.register_blueprint(auth_blueprint)
+app.register_blueprint(admin_blueprint, url_prefix='/admin')
+
 from admin import admin_blueprint
 
 from flask import Flask, render_template
