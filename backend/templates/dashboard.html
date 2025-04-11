@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard - Gustinni</title>
+</head>
+<body>
+  <h1>Bem-vindo, {{ usuario }}!</h1>
+  <p>Você está logado na Plataforma Gustinni.</p>
+  <a href="{{ url_for('auth.logout') }}">Sair</a>
+</body>
+</html>
