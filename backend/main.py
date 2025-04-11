@@ -10,10 +10,6 @@ app.register_blueprint(admin_blueprint, url_prefix='/admin')
 
 from admin import admin_blueprint
 
-from flask import Flask, render_template
-from auth import auth_blueprint
-from ml import ml_blueprint
-
 app = Flask(__name__, template_folder="../templates")
 
 app.register_blueprint(auth_blueprint)
