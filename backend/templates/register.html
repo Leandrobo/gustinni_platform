@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Cadastro - Gustinni</title>
+</head>
+<body>
+  <h1>Cadastro</h1>
+  <form method="POST">
+    <label>Usuário:</label>
+    <input type="text" name="username" required><br><br>
+    <label>Senha:</label>
+    <input type="password" name="password" required><br><br>
+    <button type="submit">Cadastrar</button>
+  </form>
+  <p>Já tem uma conta? <a href="{{ url_for('auth.login') }}">Entrar</a></p>
+</body>
+</html>
