@@ -1,25 +1,23 @@
-from flask import Flask
-from backend.auth import auth_blueprint
-from backend.admin import admin_blueprint
+from flask import Flask, render_template
+from auth import auth_blueprint
+from admin import admin_blueprint
+from ml import ml_blueprint
 
 app = Flask(__name__)
-app.secret_key = 'chave-secreta'
 
+# Configura o local dos templates e arquivos estáticos
+app.template_folder = "../templates"
+app.static_folder = "../static"
+
+# Registro dos Blueprints
 app.register_blueprint(auth_blueprint)
-app.register_blueprint(admin_blueprint, url_prefix='/admin')
-
-from admin import admin_blueprint
-
-app = Flask(__name__, template_folder="../templates")
-
-app.register_blueprint(auth_blueprint)
+app.register_blueprint(admin_blueprint, url_prefix="/admin")
 app.register_blueprint(ml_blueprint)
 
+# Rota principal
 @app.route("/")
 def home():
-    return "<h1>Plataforma Gustinni Online</h1><a href='/login'>Ir para Login</a>"
-app.register_blueprint(admin_blueprint, url_prefix="/admin")
+    return render_template("index.html")  # Exibe "Plataforma Gustinni Online" ou página inicial
 
 if __name__ == "__main__":
-    app.run()
-    
+    app.run(debug=True)
